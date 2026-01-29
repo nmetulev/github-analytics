@@ -1,0 +1,403 @@
+{
+  "collected_at": "2026-01-29T19:43:03.362287+00:00",
+  "repo": {
+    "full_name": "microsoft/winappCli",
+    "stars": 622,
+    "forks": 19,
+    "watchers": 11,
+    "open_issues_and_prs": 37,
+    "size_kb": 4336
+  },
+  "traffic": {},
+  "releases": [
+    {
+      "tag": "v0.1.10",
+      "name": "Release v0.1.10",
+      "published_at": "2026-01-22T02:42:23Z",
+      "assets": [
+        {
+          "name": "microsoft-winappcli.tgz",
+          "download_count": 42,
+          "size": 12787403
+        },
+        {
+          "name": "winappcli-arm64.zip",
+          "download_count": 30,
+          "size": 18126329
+        },
+        {
+          "name": "winappcli-x64.zip",
+          "download_count": 307,
+          "size": 18620828
+        },
+        {
+          "name": "winappcli_arm64.msix",
+          "download_count": 159,
+          "size": 6440061
+        },
+        {
+          "name": "winappcli_x64.msix",
+          "download_count": 2900,
+          "size": 6662749
+        }
+      ]
+    },
+    {
+      "tag": "v0.1.9",
+      "name": "Release v0.1.9",
+      "published_at": "2026-01-21T00:21:39Z",
+      "assets": [
+        {
+          "name": "microsoft-winappcli.tgz",
+          "download_count": 2,
+          "size": 12773580
+        },
+        {
+          "name": "winappcli-arm64.zip",
+          "download_count": 2,
+          "size": 18127286
+        },
+        {
+          "name": "winappcli-x64.zip",
+          "download_count": 3,
+          "size": 18618849
+        },
+        {
+          "name": "winappcli_arm64.msix",
+          "download_count": 42,
+          "size": 6440233
+        },
+        {
+          "name": "winappcli_x64.msix",
+          "download_count": 67,
+          "size": 6663277
+        }
+      ]
+    },
+    {
+      "tag": "v0.1.8",
+      "name": "Release v0.1.8",
+      "published_at": "2025-12-17T18:31:28Z",
+      "assets": [
+        {
+          "name": "microsoft-winappcli.tgz",
+          "download_count": 5,
+          "size": 10016736
+        },
+        {
+          "name": "winappcli-arm64.zip",
+          "download_count": 28,
+          "size": 14413579
+        },
+        {
+          "name": "winappcli-x64.zip",
+          "download_count": 102,
+          "size": 14819056
+        },
+        {
+          "name": "winappcli_arm64.msix",
+          "download_count": 70,
+          "size": 5064129
+        },
+        {
+          "name": "winappcli_x64.msix",
+          "download_count": 190,
+          "size": 5250224
+        }
+      ]
+    },
+    {
+      "tag": "v0.1.7",
+      "name": "Release v0.1.7",
+      "published_at": "2025-11-21T21:07:00Z",
+      "assets": [
+        {
+          "name": "microsoft-winappcli-0.1.7.tgz",
+          "download_count": 8,
+          "size": 9777677
+        },
+        {
+          "name": "winappcli-0.1.7-arm64.zip",
+          "download_count": 4,
+          "size": 14192048
+        },
+        {
+          "name": "winappcli-0.1.7-x64.zip",
+          "download_count": 7,
+          "size": 14591125
+        },
+        {
+          "name": "winappcli_0.1.7.0_arm64.msix",
+          "download_count": 137,
+          "size": 4941945
+        },
+        {
+          "name": "winappcli_0.1.7.0_x64.msix",
+          "download_count": 285,
+          "size": 5139211
+        }
+      ]
+    },
+    {
+      "tag": "v0.1.6",
+      "name": "Release v0.1.6",
+      "published_at": "2025-11-21T01:47:03Z",
+      "assets": [
+        {
+          "name": "microsoft-winappcli-0.1.6.tgz",
+          "download_count": 1,
+          "size": 9777891
+        },
+        {
+          "name": "winappcli-0.1.6-arm64.zip",
+          "download_count": 1,
+          "size": 14188643
+        },
+        {
+          "name": "winappcli-0.1.6-x64.zip",
+          "download_count": 2,
+          "size": 14594265
+        },
+        {
+          "name": "winappcli_0.1.6.0_arm64.msix",
+          "download_count": 107,
+          "size": 4941942
+        },
+        {
+          "name": "winappcli_0.1.6.0_x64.msix",
+          "download_count": 115,
+          "size": 5139436
+        }
+      ]
+    },
+    {
+      "tag": "v0.1.5",
+      "name": "Release v0.1.5",
+      "published_at": "2025-11-15T17:20:21Z",
+      "assets": [
+        {
+          "name": "microsoft-winappcli-0.1.5.tgz",
+          "download_count": 18,
+          "size": 9777803
+        },
+        {
+          "name": "winappcli-0.1.5-arm64.zip",
+          "download_count": 3,
+          "size": 14193004
+        },
+        {
+          "name": "winappcli-0.1.5-x64.zip",
+          "download_count": 4,
+          "size": 14593124
+        },
+        {
+          "name": "winappcli_0.1.5.0_arm64.msix",
+          "download_count": 139,
+          "size": 4941881
+        },
+        {
+          "name": "winappcli_0.1.5.0_x64.msix",
+          "download_count": 175,
+          "size": 5139487
+        }
+      ]
+    },
+    {
+      "tag": "v0.1.4",
+      "name": "Release v0.1.4",
+      "published_at": "2025-11-13T04:49:47Z",
+      "assets": [
+        {
+          "name": "microsoft-winappcli-0.1.4.tgz",
+          "download_count": 5,
+          "size": 10640031
+        },
+        {
+          "name": "winappcli-0.1.4-arm64.zip",
+          "download_count": 3,
+          "size": 15360523
+        },
+        {
+          "name": "winappcli-0.1.4-x64.zip",
+          "download_count": 4,
+          "size": 15924513
+        },
+        {
+          "name": "winappcli_0.1.4.0_arm64.msix",
+          "download_count": 122,
+          "size": 5403706
+        },
+        {
+          "name": "winappcli_0.1.4.0_x64.msix",
+          "download_count": 132,
+          "size": 5568666
+        }
+      ]
+    },
+    {
+      "tag": "v0.1.3",
+      "name": "Release v0.1.3",
+      "published_at": "2025-11-12T02:42:29Z",
+      "assets": [
+        {
+          "name": "microsoft-winappcli-0.1.3.tgz",
+          "download_count": 2,
+          "size": 10638831
+        },
+        {
+          "name": "winappcli-0.1.3-arm64.zip",
+          "download_count": 2,
+          "size": 15357067
+        },
+        {
+          "name": "winappcli-0.1.3-x64.zip",
+          "download_count": 4,
+          "size": 15922250
+        },
+        {
+          "name": "winappcli_0.1.3.0_arm64.msix",
+          "download_count": 4,
+          "size": 5402818
+        },
+        {
+          "name": "winappcli_0.1.3.0_x64.msix",
+          "download_count": 7,
+          "size": 5568509
+        }
+      ]
+    },
+    {
+      "tag": "v0.1.2",
+      "name": "Release v0.1.2-rc1",
+      "published_at": "2025-11-06T01:58:05Z",
+      "assets": [
+        {
+          "name": "microsoft-winappcli-0.1.2.tgz",
+          "download_count": 2,
+          "size": 10638401
+        },
+        {
+          "name": "winappcli-0.1.2-arm64.zip",
+          "download_count": 2,
+          "size": 15360726
+        },
+        {
+          "name": "winappcli-0.1.2-x64.zip",
+          "download_count": 4,
+          "size": 15917654
+        },
+        {
+          "name": "winappcli_0.1.2.0_arm64.msix",
+          "download_count": 3,
+          "size": 5346883
+        },
+        {
+          "name": "winappcli_0.1.2.0_x64.msix",
+          "download_count": 9,
+          "size": 5509446
+        }
+      ]
+    },
+    {
+      "tag": "v0.1.1-gui",
+      "name": "v0.1.1-gui",
+      "published_at": "2025-11-05T17:08:59Z",
+      "assets": [
+        {
+          "name": "winapp-GUI_0.1.1.0_arm64.msix",
+          "download_count": 12,
+          "size": 15250332
+        },
+        {
+          "name": "winapp-GUI_0.1.1.0_x64.msix",
+          "download_count": 75,
+          "size": 57467651
+        }
+      ]
+    },
+    {
+      "tag": "v0.1.1",
+      "name": "Release v0.1.1-rc1",
+      "published_at": "2025-11-04T04:32:56Z",
+      "assets": [
+        {
+          "name": "microsoft-winappcli-0.1.1.tgz",
+          "download_count": 28,
+          "size": 10424023
+        },
+        {
+          "name": "winappcli-arm64.zip",
+          "download_count": 2,
+          "size": 15348987
+        },
+        {
+          "name": "winappcli-x64.zip",
+          "download_count": 5,
+          "size": 15911362
+        },
+        {
+          "name": "winapp_arm64_0.1.1.0.msix",
+          "download_count": 11,
+          "size": 5347907
+        },
+        {
+          "name": "winapp_x64_0.1.1.0.msix",
+          "download_count": 14,
+          "size": 5505772
+        }
+      ]
+    },
+    {
+      "tag": "v0.1.0",
+      "name": "Release v0.1.0-rc1",
+      "published_at": "2025-11-04T00:38:35Z",
+      "assets": [
+        {
+          "name": "microsoft-winappcli-0.1.0-rc1.tgz",
+          "download_count": 2,
+          "size": 9765236
+        },
+        {
+          "name": "winappcli-arm64.zip",
+          "download_count": 2,
+          "size": 14651888
+        },
+        {
+          "name": "winappcli-x64.zip",
+          "download_count": 5,
+          "size": 14987439
+        }
+      ]
+    }
+  ],
+  "languages": {
+    "C#": 709396,
+    "PowerShell": 70798,
+    "TypeScript": 49563,
+    "JavaScript": 17795,
+    "C++": 1946,
+    "Python": 1231,
+    "Batchfile": 664
+  },
+  "code_frequency": {},
+  "contributors_count": 12,
+  "releases_downloads": 5416,
+  "star_history": [
+    {
+      "date": "2025-10-15",
+      "stars": 1
+    }
+  ],
+  "issue_counts": {
+    "open_issues": 33,
+    "open_prs": 4
+  },
+  "packages": [
+    {
+      "package": "@microsoft/winappcli",
+      "source": "npm",
+      "daily_downloads": 0,
+      "weekly_downloads": 328
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repository Analytics</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="index.html" class="back-link">← All Repositories</a>
+            <h1 id="repo-title">Loading...</h1>
+            <p class="subtitle" id="repo-subtitle"></p>
+        </header>
+        
+        <main>
+            <!-- Stats Cards -->
+            <section class="stats-cards" id="stats-cards">
+                <div class="stat-card">
+                    <span class="stat-icon">⭐</span>
+                    <span class="stat-value" id="stat-stars">—</span>
+                    <span class="stat-label">Stars</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon">🍴</span>
+                    <span class="stat-value" id="stat-forks">—</span>
+                    <span class="stat-label">Forks</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon">👁️</span>
+                    <span class="stat-value" id="stat-watchers">—</span>
+                    <span class="stat-label">Watchers</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon">📥</span>
+                    <span class="stat-value" id="stat-downloads">—</span>
+                    <span class="stat-label">Downloads</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon">🐛</span>
+                    <span class="stat-value" id="stat-issues">—</span>
+                    <span class="stat-label">Open Issues</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon">🔀</span>
+                    <span class="stat-value" id="stat-prs">—</span>
+                    <span class="stat-label">Open PRs</span>
+                </div>
+                <div class="stat-card" id="stat-views-card">
+                    <span class="stat-icon">📊</span>
+                    <span class="stat-value" id="stat-views">—</span>
+                    <span class="stat-label">Views (14d)</span>
+                </div>
+                <div class="stat-card" id="stat-npm-card">
+                    <span class="stat-icon">📦</span>
+                    <span class="stat-value" id="stat-npm">—</span>
+                    <span class="stat-label">npm (weekly)</span>
+                </div>
+            </section>
+            
+            <!-- Charts -->
+            <section class="charts-grid">
+                <div class="chart-container" id="traffic-section">
+                    <h3>Traffic Over Time</h3>
+                    <canvas id="traffic-chart"></canvas>
+                </div>
+                
+                <div class="chart-container">
+                    <h3>Star History</h3>
+                    <canvas id="growth-chart"></canvas>
+                </div>
+                
+                <div class="chart-container">
+                    <h3>Total Downloads Over Time</h3>
+                    <canvas id="downloads-chart"></canvas>
+                </div>
+                
+                <div class="chart-container">
+                    <h3>Daily Downloads</h3>
+                    <canvas id="daily-downloads-chart"></canvas>
+                </div>
+                
+                <div class="chart-container">
+                    <h3>Open Issues Over Time</h3>
+                    <canvas id="issues-chart"></canvas>
+                </div>
+                
+                <div class="chart-container" id="npm-section">
+                    <h3>npm Weekly Downloads</h3>
+                    <canvas id="npm-chart"></canvas>
+                </div>
+                
+                <div class="chart-container full-width">
+                    <h3>Downloads by Release</h3>
+                    <canvas id="releases-chart"></canvas>
+                </div>
+            </section>
+            
+            <!-- Release Cards -->
+            <section class="releases-section">
+                <h2>Release Breakdown</h2>
+                <div id="release-cards" class="release-cards-grid">
+                    <p class="loading">Loading releases...</p>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>Data collected daily via GitHub Actions. 
+               <a href="index.html">Back to all repositories</a>
+            </p>
+        </footer>
+    </div>
+    
+    <script src="assets/app.js"></script>
+</body>
+</html>

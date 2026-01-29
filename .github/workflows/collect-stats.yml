@@ -1,0 +1,46 @@
+name: Collect GitHub Stats
+
+on:
+  schedule:
+    # Run daily at 23:00 UTC (captures full day of traffic)
+    - cron: '0 23 * * *'
+  workflow_dispatch:
+    # Allow manual trigger
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stats-collection
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: Install dependencies
+        run: pip install -r scripts/requirements.txt
+      
+      - name: Collect metrics
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: python scripts/collect.py
+      
+      - name: Commit and push data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/
+          git diff --staged --quiet || git commit -m "📊 Update stats $(date -u +%Y-%m-%d)"
+          git push

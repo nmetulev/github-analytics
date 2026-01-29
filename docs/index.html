@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Analytics Dashboard</title>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📊 GitHub Analytics Dashboard</h1>
+            <p class="subtitle">Tracking repository metrics over time</p>
+        </header>
+        
+        <main>
+            <section id="repos-list">
+                <h2>Tracked Repositories</h2>
+                <div id="repos-grid" class="repos-grid">
+                    <div class="loading">Loading repositories...</div>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>Data collected daily via GitHub Actions. 
+               <a href="https://github.com" target="_blank">View source</a>
+            </p>
+        </footer>
+    </div>
+    
+    <script>
+        const CONFIG_URL = '/config.json';
+        const DATA_BASE_URL = '/data';
+        
+        async function loadConfig() {
+            try {
+                const response = await fetch(CONFIG_URL);
+                return await response.json();
+            } catch (error) {
+                console.error('Failed to load config:', error);
+                return { repos: [] };
+            }
+        }
+        
+        async function loadLatestAggregate(repo) {
+            const [owner, name] = repo.split('/');
+            const url = `${DATA_BASE_URL}/${owner}/${name}/aggregate.csv`;
+            
+            try {
+                const response = await fetch(url);
+                if (!response.ok) return null;
+                
+                const text = await response.text();
+                const lines = text.trim().split('\n');
+                if (lines.length < 2) return null;
+                
+                const headers = lines[0].split(',').map(h => h.trim());
+                const lastLine = lines[lines.length - 1].split(',').map(v => v.trim());
+                
+                const data = {};
+                headers.forEach((h, i) => {
+                    data[h] = lastLine[i];
+                });
+                return data;
+            } catch (error) {
+                console.error(`Failed to load data for ${repo}:`, error);
+                return null;
+            }
+        }
+        
+        function formatNumber(num) {
+            if (!num || num === '') return '—';
+            const n = parseInt(num);
+            if (n >= 1000000) return (n / 1000000).toFixed(1) + 'M';
+            if (n >= 1000) return (n / 1000).toFixed(1) + 'K';
+            return n.toLocaleString();
+        }
+        
+        function createRepoCard(repo, data) {
+            const card = document.createElement('a');
+            card.className = 'repo-card';
+            card.href = `repo.html?repo=${encodeURIComponent(repo)}`;
+            
+            const hasData = data !== null;
+            
+            card.innerHTML = `
+                <h3>${repo}</h3>
+                <div class="stats">
+                    <div class="stat">
+                        <span class="stat-value">${hasData ? formatNumber(data.stars) : '—'}</span>
+                        <span class="stat-label">Stars</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value">${hasData ? formatNumber(data.forks) : '—'}</span>
+                        <span class="stat-label">Forks</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value">${hasData ? formatNumber(data.releases_downloads) : '—'}</span>
+                        <span class="stat-label">Downloads</span>
+                    </div>
+                </div>
+                ${hasData ? `<div class="last-updated">Last updated: ${data.date}</div>` : '<div class="last-updated">No data yet</div>'}
+            `;
+            
+            return card;
+        }
+        
+        async function init() {
+            const config = await loadConfig();
+            const grid = document.getElementById('repos-grid');
+            grid.innerHTML = '';
+            
+            if (config.repos.length === 0) {
+                grid.innerHTML = '<p class="no-data">No repositories configured. Add repos to config.json</p>';
+                return;
+            }
+            
+            for (const repoEntry of config.repos) {
+                // Support both string format and object format
+                const repo = typeof repoEntry === 'string' ? repoEntry : repoEntry.repo;
+                if (!repo) continue;
+                
+                const data = await loadLatestAggregate(repo);
+                const card = createRepoCard(repo, data);
+                grid.appendChild(card);
+            }
+        }
+        
+        init();
+    </script>
+</body>
+</html>

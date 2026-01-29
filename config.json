@@ -1,0 +1,10 @@
+{
+  "repos": [
+    {
+      "repo": "microsoft/winappcli",
+      "packages": {
+        "npm": ["@microsoft/winappcli"]
+      }
+    }
+  ]
+}
