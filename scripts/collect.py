@@ -740,9 +740,10 @@ def main() -> int:
     
     print(f"   Repos: {len(repos_config)}")
     
-    # Get today's date
-    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
-    print(f"   Date:  {today}")
+    # Get today's date in PST (UTC-8)
+    pst = timezone(timedelta(hours=-8))
+    today = datetime.now(pst).strftime("%Y-%m-%d")
+    print(f"   Date:  {today} (PST)")
     
     # Collect metrics for each repo
     success_count = 0

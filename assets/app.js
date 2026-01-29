@@ -762,6 +762,19 @@ async function init() {
     if (releaseCardsContainer) {
         createReleaseCards(releasesData, releaseCardsContainer);
     }
+    
+    // Update last refresh time
+    const lastRefreshEl = document.getElementById('last-refresh');
+    if (lastRefreshEl && aggregateData.length > 0) {
+        const latestDate = aggregateData[aggregateData.length - 1].date;
+        // Parse as local date (add T12:00 to avoid timezone rollback)
+        const date = new Date(latestDate + 'T12:00:00');
+        // Convert 7:00 UTC (11PM PST) to local time
+        const refreshTime = new Date();
+        refreshTime.setUTCHours(7, 0, 0, 0);
+        const localTime = refreshTime.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', hour12: true });
+        lastRefreshEl.textContent = `Last refreshed: ${date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })} \u2022 Refreshes daily at ${localTime}`;
+    }
 }
 
 // Start the app

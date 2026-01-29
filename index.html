@@ -11,6 +11,7 @@
         <header>
             <h1>📊 GitHub Analytics Dashboard</h1>
             <p class="subtitle">Tracking repository metrics over time</p>
+            <p class="last-refresh" id="last-refresh">Data refreshes daily at 23:00 UTC</p>
         </header>
         
         <main>
@@ -23,9 +24,7 @@
         </main>
         
         <footer>
-            <p>Data collected daily via GitHub Actions. 
-               <a href="https://github.com" target="_blank">View source</a>
-            </p>
+            <p><a href="https://github.com" target="_blank">View source</a></p>
         </footer>
     </div>
     
@@ -116,6 +115,7 @@
                 return;
             }
             
+            let latestDate = null;
             for (const repoEntry of config.repos) {
                 // Support both string format and object format
                 const repo = typeof repoEntry === 'string' ? repoEntry : repoEntry.repo;
@@ -124,6 +124,22 @@
                 const data = await loadLatestAggregate(repo);
                 const card = createRepoCard(repo, data);
                 grid.appendChild(card);
+                
+                if (data && data.date && (!latestDate || data.date > latestDate)) {
+                    latestDate = data.date;
+                }
+            }
+            
+            // Update last refresh time
+            if (latestDate) {
+                // Parse as local date (add T12:00 to avoid timezone rollback)
+                const date = new Date(latestDate + 'T12:00:00');
+                // Convert 7:00 UTC (11PM PST) to local time
+                const refreshTime = new Date();
+                refreshTime.setUTCHours(7, 0, 0, 0);
+                const localTime = refreshTime.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', hour12: true });
+                document.getElementById('last-refresh').textContent = 
+                    `Last refreshed: ${date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })} \u2022 Refreshes daily at ${localTime}`;
             }
         }
         
