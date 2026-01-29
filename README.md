@@ -2,6 +2,8 @@
 
 A simple dashboard to track GitHub repository metrics over time. Automatically collects stars, forks, issues, release downloads, and npm package stats daily via GitHub Actions.
 
+[View dashboard](https://metulev.com/project-analytics)
+
 ## Features
 
 - **Historical tracking** - Daily snapshots of repo metrics stored as CSV
